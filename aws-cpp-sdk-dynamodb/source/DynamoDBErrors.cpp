@@ -59,11 +59,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == CONDITIONAL_CHECK_FAILED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::CONDITIONAL_CHECK_FAILED), false);
-  }
-  else if (hashCode == TRANSACTION_CANCELED_HASH)
+  //if (hashCode == CONDITIONAL_CHECK_FAILED_HASH)
+  //{
+  //  return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::CONDITIONAL_CHECK_FAILED), false);
+  //}
+  if (hashCode == TRANSACTION_CANCELED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::TRANSACTION_CANCELED), false);
   }
